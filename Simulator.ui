@@ -25,12 +25,12 @@
     </property>
     <item>
      <property name="text">
-      <string>Summer</string>
+      <string>Winter</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Winter</string>
+      <string>Summer</string>
      </property>
     </item>
    </widget>
@@ -177,7 +177,7 @@
      <x>0</x>
      <y>0</y>
      <width>1039</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

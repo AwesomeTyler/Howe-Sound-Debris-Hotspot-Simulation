@@ -256,6 +256,13 @@ class Ui(QtWidgets.QMainWindow):
     # Summer in Northern Howe Sound
     def North_Fan_Line(self, x, Dir):
         return 0.5 * (Dir *(x+ 0.18) * (x + 0.18) -0.3) + 0.5 * ((x + 0.18) -0.3)
+
+    def Central_Fan_Line(self, x, Dir, V_Offset):
+        return 0.4 * (Dir * (x + 0.18) * (x + 0.18) ) + 0.2 * ((x + 0.18) - 0.3) - V_Offset
+    def Central_Fan_Line2(self, x, Dir):
+        return 0.4 * (Dir * (x + 0.18) * (x + 0.18) ) + 0.2 * ((x + 0.18) - 0.3) -0.22
+
+
     #Two most frequent daytime wind direction is 155 and 165
     def North_Summer(self,x,start_coor):
         return  -2.75 * (x - (start_coor[0])) + start_coor[1]
@@ -345,23 +352,34 @@ class Ui(QtWidgets.QMainWindow):
                 self.WindRose_Label.setText("Central Howe Sound Summer")
                 self.Add_Windrose(image_path="Wind_Rose/Central Summer Daytime.png",layout=self.WindRose_Daytime_Layout)
                 self.WindRose_Daytime_Label.setText("Central Howe Sound Summer Daytime")
-                Starting_Coord_Central_Summer = [(-0.81, -0.55), (-0.59, -0.96), (-0.16, -0.51), (-0.2, -0.94), (-0.24, -0.68), (-0.81, -1.01), (-0.45, -0.31), (-0.64, -0.32)]
+
+                Starting_Coord_Central_Summer = [(-0.45, -0.31), (-0.178, -0.5) ,(-0.21, -0.7), (-0.124, -0.49), (-0.31, -0.65), (-0.292, -0.94), (-0.29, -1), (-0.35, -1),
+                                                 (-0.67, -0.955), (-0.56, -0.91), (-0.54, -0.86), (-0.064, -1.04), (-0.855, -0.69), (-0.85, -0.54), (-0.598, -0.31), (-0.785, -0.797),
+                                                 (-0.04, -0.9), (-0.07, -0.74)]
+
                 for i in Starting_Coord_Central_Summer:
                     self.viewer.start_multiple_animations(lambda x: self.central_summer_1(x, i), i, speed=0.4, direction="RtoL")
-                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.06,-0.06)),(-0.06,-0.06), speed=0.3, direction= "RtoL")
-                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.12,-0.24)),(-0.12,-0.24), speed=0.3, direction= "RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.16,-0.24)),(-0.16,-0.24), speed=0.3, direction= "RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.11,-0.26)),(-0.11,-0.26), speed=0.3, direction= "RtoL")
+
+                self.viewer.start_multiple_animations(lambda x: self.Central_Fan_Line(x, 14, V_Offset=0), (-0.07, 0.037), speed=0.35,direction="RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.Central_Fan_Line(x, 14, V_Offset=0.245), (-0.07, 0.037), speed=0.35,direction="RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.Central_Fan_Line(x, 14, V_Offset=0.292), (-0.07, 0.037), speed=0.35,direction="RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.Central_Fan_Line(x, 14, V_Offset=0.14), (-0.07, 0.037), speed=0.35,direction="RtoL")
+
+
 
             else: #Central Winter
                 self.Add_Windrose(image_path="Wind_Rose/Central Winter.png",layout=self.WindRose_layout)
                 self.WindRose_Label.setText("Central Howe Sound Winter")
                 self.Add_Windrose(image_path="Wind_Rose/Central Winter Daytime.png",layout=self.WindRose_Daytime_Layout)
                 self.WindRose_Daytime_Label.setText("Central Howe Sound Winter Daytime")
-                Starting_Coord_Central_Winter = [(-0.59, -0.19), (-0.95, -0.45), (-0.69, -0.27), (-0.64, -0.89), (-0.16, -0.51), (-0.28, -0.86),
-                       (-0.24, -0.68), (-0.81, -0.3), (-0.81, -1.01), (-0.43, -0.35)]
+                Starting_Coord_Central_Winter = [(-0.035, -0.002), (-0.0853, -0.482), (-0.046, -0.68), (-0.074, -0.977), (-0.45, -0.9), (-0.74, -0.94),
+                                                 (-0.689, -0.78), (-0.609, -0.776), (-0.2, -0.71), (-0.905, -0.334), (-0.422, -0.32), (-0.86, -0.49), (-0.83, -0.72)]
                 for i in Starting_Coord_Central_Winter:
                     self.viewer.start_multiple_animations(lambda x: self.central_winter_1(x, i), i, speed=0.1, direction="LtoR")
-                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.06,-0.06)),(-0.06,-0.06), speed=0.3, direction= "RtoL")
-                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.12,-0.24)),(-0.12,-0.24), speed=0.3, direction= "RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.16, -0.24)),(-0.16, -0.24), speed=0.3, direction="RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.central_summer_2(x, (-0.11, -0.26)),(-0.11, -0.26), speed=0.3, direction="RtoL")
 
 
 
