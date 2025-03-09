@@ -115,8 +115,6 @@ class ShapefileViewer:
     def plot_shapefile(self):
 
         self.shapefile = gpd.read_file(self.shapefile_path)
-        self.shapefile['geometry'] = self.shapefile['geometry'].translate(xoff=-self.shapefile.total_bounds[2], yoff=-self.shapefile.total_bounds[3])
-        self.shapefile['geometry'] = self.shapefile['geometry'].scale(xfact=-1 /self.shapefile.total_bounds[0], yfact=-1 /self.shapefile.total_bounds[0], origin=(0, 0))
 
         self.shapefile.plot(ax=self.ax, color='gray', edgecolor='black')
         self.ax.set_title('Howe Sound')

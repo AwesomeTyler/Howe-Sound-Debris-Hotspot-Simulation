@@ -125,9 +125,11 @@ class ShapefileViewer:
         self.shapefile['geometry'] = self.shapefile['geometry'].scale(xfact=-1 /self.shapefile.total_bounds[0], yfact=-1 /self.shapefile.total_bounds[0], origin=(0, 0))
 
         self.shapefile.plot(ax=self.ax, color='gray', edgecolor='black')
-        self.ax.set_title('Howe Sound')
-        self.ax.set_xlabel('Longitude')
-        self.ax.set_ylabel('Latitude')
+        self.ax.set_xticks([])
+        self.ax.set_yticks([])
+        self.ax.set_xticklabels([])
+        self.ax.set_yticklabels([])
+
         self.canvas.draw()
 
     def onScroll(self, event):
