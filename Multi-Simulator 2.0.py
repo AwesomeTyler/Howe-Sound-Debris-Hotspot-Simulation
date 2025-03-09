@@ -329,7 +329,7 @@ class Ui(QtWidgets.QMainWindow):
                     self.viewer.start_multiple_animations(lambda x: self.North_Fan_Line(x, i), (-0.18, -0.3), speed=0.8,
                                                           direction="RtoL")
                 self.viewer.start_multiple_animations(lambda x: self.North_Summer(x, (-0.8, -1.6)), (-0.8, -1.6), speed=0.4,direction="RtoL")
-                self.viewer.start_multiple_animations(lambda x: self.North_Summer(x, (-0.8, -1.35)), (-0.8, -1.35), speed=0.4, direction="RtoL")
+                self.viewer.start_multiple_animations(lambda x: self.North_Summer(x, (-0.66, -1.46)), (-0.66, -1.46), speed=0.4,direction="RtoL")
 
 
 
@@ -353,7 +353,7 @@ class Ui(QtWidgets.QMainWindow):
                 self.Add_Windrose(image_path="Wind_Rose/Central Summer Daytime.png",layout=self.WindRose_Daytime_Layout)
                 self.WindRose_Daytime_Label.setText("Central Howe Sound Summer Daytime")
 
-                Starting_Coord_Central_Summer = [(-0.45, -0.31), (-0.178, -0.5) ,(-0.21, -0.7), (-0.124, -0.49), (-0.31, -0.65), (-0.292, -0.94), (-0.29, -1), (-0.35, -1),
+                Starting_Coord_Central_Summer = [(-0.45, -0.31), (-0.178, -0.5) ,(-0.21, -0.7), (-0.124, -0.49), (-0.31, -0.65), (-0.292, -0.94), (-0.35, -1),
                                                  (-0.67, -0.955), (-0.56, -0.91), (-0.54, -0.86), (-0.064, -1.04), (-0.855, -0.69), (-0.85, -0.54), (-0.598, -0.31), (-0.785, -0.797),
                                                  (-0.04, -0.9), (-0.07, -0.74)]
 
@@ -391,7 +391,7 @@ class Ui(QtWidgets.QMainWindow):
                 self.WindRose_Label.setText("South Howe Sound Summer")
                 self.Add_Windrose(image_path="Wind_Rose/South Summer Daytime.png",layout=self.WindRose_Daytime_Layout)
                 self.WindRose_Daytime_Label.setText("South Howe Sound Summer Daytime")
-                Starting_Coord_South_Summer = [(-0.86, -0.22), (-0.59, -0.04), (-0.17, -0.12), (-0.24, -0.32), (-0.178, -0.487), (-0.61, -0.211)]
+                Starting_Coord_South_Summer = [(-0.85, -0.186),(-0.82, -0.12),(-0.67, -0.355) , (-0.268, -0.392), (-0.24, -0.225), (-0.66, -0.093)]
                 for i in Starting_Coord_South_Summer:
                     self.viewer.start_multiple_animations(lambda x: self.Southern_Wind(x, i), i, speed=0.3, direction="LtoR")
 
@@ -400,7 +400,7 @@ class Ui(QtWidgets.QMainWindow):
                 self.WindRose_Label.setText("South Howe Sound Winter")
                 self.Add_Windrose(image_path="Wind_Rose/South Winter Daytime.png",layout=self.WindRose_Daytime_Layout)
                 self.WindRose_Daytime_Label.setText("South Howe Sound Winter Daytime")
-                Starting_Coord_South_Winter = [(-0.05, -0.14),(-0.145, -0.277), (-0.199, -0.477), (-0.59, -0.37), (-0.51, -0.15) ]
+                Starting_Coord_South_Winter = [(-0.05, -0.145),(-0.145, -0.277) , (-0.178, -0.468), (-0.56, -0.372), (-0.43, -0.124) , (-0.719, -0.328)]
                 for i in Starting_Coord_South_Winter:
                     self.viewer.start_multiple_animations(lambda x: self.Southern_Wind(x, i), i, speed=0.3,direction="RtoL")
 

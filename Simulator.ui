@@ -71,17 +71,17 @@
     </property>
     <item>
      <property name="text">
+      <string>Southern Howe Sound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Central Howe Sound</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>Northern Howe Sound</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Southern Howe Sound</string>
      </property>
     </item>
    </widget>
